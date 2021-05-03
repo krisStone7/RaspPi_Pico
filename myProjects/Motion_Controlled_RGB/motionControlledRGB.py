@@ -1,6 +1,6 @@
-from utime import sleep
 import machine
 import time
+from utime import sleep
 from machine import Pin, PWM
 
 # Pin Definitions for individual colors of the RGB LED
@@ -125,11 +125,11 @@ def getSeconds():
 
 # BEGIN LOOP OF PWM TESTING
 while True:
-    power_Motion.value(1)
+    #power_Motion.value(1)
     #print("value of pin 0 is %s " % str(power_Motion.value()))
-    if (signal_Motion.value() == 1):
-        print("motion is working")
-        '''
+    #if (signal_Motion.value() == 1):
+     #   print("motion is working")
+        #'''
         seconds = getSeconds()
         localTime = updateLocalTime(seconds)
         print("Start Dimming RED: %s" % str(localTime))
@@ -181,9 +181,7 @@ while True:
         STEP += 1
         if(STEP == 100):
             STEP = 10
-    else:
-        break
-    '''
+    #'''
 #END OF PWM TESTING LOOP
 
 """BEGINNING OF TOGGLE COLORS
